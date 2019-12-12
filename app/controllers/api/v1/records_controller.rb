@@ -2,6 +2,7 @@ module Api
   module V1
     class RecordsController < ApplicationController
       before_action :set_record, only: [:show, :edit, :update, :destroy]
+      before_action :authorize_access_request!, except: [:show, :index]
 
       # GET /records
       # GET /records.json
