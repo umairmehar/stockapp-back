@@ -3,19 +3,24 @@
     <div class="m-auto border p-5 shadow rounded w-50">
       <h3 class="mb-5">Sign In</h3>
       <form @submit.prevent="signin">
-        <div class="text-red" v-if="error">{{ error }}</div>
+        <div class="text-danger" v-if="error">{{ error }}</div>
 
-        <div class="form-group">
+        <div class="mb-3 form-inline d-flex justify-content-between">
           <label for="email">E-mail Address</label>
           <input type="email" v-model="email" class="form-control" id="email" placeholder="email@example.com">
         </div>
-        <div class="form-group">
+        <div class="mb-3 form-inline d-flex justify-content-between">
           <label for="password">Password</label>
           <input type="password" v-model="password" class="form-control" id="password" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Sign In</button>
-
-        <div class="my-4"><router-link to="/signup" class="link-grey">Sign up</router-link></div>
+        <div class="d-flex justify-content-between">
+          <span>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+          </span>
+          <span>
+            <router-link to="/signup" class="btn btn-primary">Sign up</router-link>
+          </span>
+        </div>
       </form>
     </div>
   </div>
